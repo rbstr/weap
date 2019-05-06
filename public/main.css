@@ -1,0 +1,70 @@
+body {
+  background-color: rgba(0,0,0,0.1);
+  font-family: sans-serif;
+  padding-top: 50px;
+}
+.container {
+  display: block;
+  width: 410px;
+  height: auto;
+  margin: 100px auto 0;
+  background: #ffffff;
+  border-top-left-radius: 5% 10%;
+  border-top-right-radius: 5% 10%;
+  border-bottom-right-radius: 5% 10%;
+  border-bottom-left-radius: 5% 10%;
+  border: solid rgba(0,0,0,0.2);
+}
+input {
+  width: 200px;
+  height: 30px;
+  border-radius: 10px;
+  border: 1px #8c8e8c solid;
+  font-size: 16px;
+  padding: 5px;
+}
+button {
+  width: 80px;
+  height: 40px;
+  border-radius: 10px;
+  border: 1px gray solid;
+  font-size: 20px;
+}
+.no-focus {
+  outline: 0;
+}
+#main {
+  text-align: center;
+}
+#todo-list {
+  padding-top: 20px;
+  margin-bottom: 10px;
+}
+#todo-list ul {
+  padding: 0;
+  list-style-type: none;
+  width: 300px;
+  margin: auto;
+}
+#todo-list ul li {
+  font-family: sans-serif;
+  font-size: 20px;
+  margin-top: 6px;
+  text-align: left;
+  padding-left: 5px;
+  border:solid rgba(0,0,0,0.2);
+  border-radius: 10px;
+}
+#todo-list ul li i {
+  margin-right: 10px;
+}
+
+#todo-list ul li i:hover {
+  color: red;
+}
+#todo-list ul li span {
+  color:rgb(0, 109, 245);
+}
+.hidden {
+  display: none !important;
+}
