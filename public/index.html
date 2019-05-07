@@ -1,0 +1,105 @@
+<!DOCTYPE>
+<html ng-app="myApp">
+<head>
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.1/css/bootstrap.min.css">
+<!--
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.1/css/bootstrap-theme.min.css">
+-->
+  <link rel="stylesheet" href="//ajax.googleapis.com/ajax/libs/angular_material/1.1.0-rc2/angular-material.min.css">
+  <link rel='stylesheet' href='http://fonts.googleapis.com/css?family=Roboto:400,700'>
+
+  <link rel="stylesheet" href="//ajax.googleapis.com/ajax/libs/angular_material/1.1.0-rc2/angular-material.min.css">
+  <link rel='stylesheet' href='http://fonts.googleapis.com/css?family=Roboto:400,700'>
+
+<title>WEAP_Rubes</title>
+</head>
+  <body>
+
+<body ng-cloak>
+  <md-content>
+    <script src="//ajax.googleapis.com/ajax/libs/angularjs/1.5.3/angular.min.js"></script>
+    <script src="//ajax.googleapis.com/ajax/libs/angularjs/1.5.3/angular-animate.min.js"></script>
+    <script src="//ajax.googleapis.com/ajax/libs/angularjs/1.5.3/angular-aria.min.js"></script>
+    <script src="//ajax.googleapis.com/ajax/libs/angular_material/1.1.0-rc2/angular-material.min.js"></script>
+<body>
+  <div class="container" ng-controller="AppCtrl">
+  <div class="page-header">
+    <h1>
+      "TO-DO"
+      <small>
+        <span id="remaining">{{remaining}}</span>
+        of
+        <span id="total">{{total}}</span>
+        remaining
+        <small>[<button type="button" class="btn btn-link" ng-click="resetTodo()">Clear all</button>]</small>
+      </small>
+    </h1>
+  </div>
+
+
+  <div layout="row">
+        <md-input-container flex="50">
+          <label>Write thing, set date and press 'add todo'</label>
+          <input name="description" ng-model="todo.description">
+        </md-input-container>
+
+        <div class="col-md-2">
+          <label class="sr-only" for="date">Todo Date</label>
+          <md-datepicker ng-model="todo.date" md-placeholder="Enter date" md-open-on-focus></md-datepicker>
+        </div>
+
+        <div class="col-md-4">
+          <md-button class="md-raised md-primary" ng-click="addTodo()">Add Todo</md-button>
+          <md-button class="md-raised" ng-click="update(todo.id)">Update</md-button>
+          <md-button class="md-raised" ng-click="deselect()">Clear</md-button>
+        </div>
+
+  </div>
+
+
+
+  <div class="jumbotron" ng-if ="total == 0">
+    <h1>No worries.. <small>You don't have any task! </small></h1>
+  </div>
+
+
+
+  <table class="table table-hover table-striped table-bordered" ng-if ="total != 0">
+    <thead>
+      <tr>
+        <th>Task</th>
+        <th>Date</th>
+        <th>Action</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr ng-repeat="todo in todoList">
+        <td ng-if="!todo.done">
+          {{todo.description}}
+        </td>
+        <td ng-if="todo.done">
+          <s>{{todo.description}}</s>
+        </td>
+        <td>
+          {{todo.date | date}}
+        </td>
+        <td>
+          <md-button class="md-raised md-warn" ng-if="todo.done" ng-click="markNotDone(todo._id)">Mark as Not Done</md-button>
+
+          <md-button class="md-raised" ng-if="!todo.done" ng-click="markDone(todo._id)">Mark as Done</md-button>
+
+          <md-button class="md-raised md-warn" ng-click="edit(todo._id)">Edit</md-button>
+
+          <md-button class="md-accent md-raised md-hue-1" ng-click="remove(todo._id)">Remove</md-button>
+
+
+        </td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.3.12/angular.min.js"></script>
+<script src="controllers/controller.js"></script>
+</md-content>
+</body>
+</html>
