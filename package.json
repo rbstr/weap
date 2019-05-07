@@ -7,6 +7,13 @@
     "test": "echo \"Error: no test specified\" && exit 1",
     "start": "node server.js"
   },
+  "dependencies":{
+   "express":"*",
+   "body-parser":"*",
+   "mongodb":"*",
+   "mongojs":"*",
+   "thunky":"*"
+  },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/rbstr/weap.git"
