@@ -1,7 +1,7 @@
 var express = require('express');
 var app = express();
 var mongojs = require('mongojs');
-var db = mongojs('mongodb://localhost:27017/weap'); //"mongodb+srv://filip:<filip>@weapmongo-kzyhb.azure.mongodb.net/test?retryWrites=true";
+var db = mongojs('mongodb://localhost:27017'); //"mongodb+srv://filip:<filip>@weapmongo-kzyhb.azure.mongodb.net/test?retryWrites=true";
 var bodyParser = require('body-parser');
 
 app.use(express.static(__dirname + '/public'));
