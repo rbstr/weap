@@ -44,8 +44,9 @@ app.put('/todoList/:id', function (req, res) {
   var id = req.params.id;
   console.log(req.body.description);
   db.todoList.findAndModify({
+    var desc = xss(req.body.description);
     query: {_id: mongojs.ObjectId(id)},
-    update: {$set: {description: req.body.description, date: req.body.date , done: req.body.done}},
+    update: {$set: {description: desc, date: req.body.date , done: req.body.done}},
     new: true}, function (err, doc) {
       res.json(doc);
     }
